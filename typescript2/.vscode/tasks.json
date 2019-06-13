@@ -1,0 +1,23 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "typescript",
+            "tsconfig": "c:\\Users\\Johnny\\Documents\\GitHub\\jonathanweissenberger.github.io\\typescript3\\Dungeon-Example\\tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "../../../../../../../c:/Users/Johnny/Documents/GitHub/jonathanweissenberger.github.io/typescript2/tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        }
+    ]
+}
