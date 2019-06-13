@@ -7,6 +7,7 @@ body {
 	font-size: 1.0em;
 	font-family: "Courgette", sans-serif;
 	background-image: url("https://cdn1.epicgames.com/ue/product/Screenshot/ModularDungeon_screenshot_01-1920x1080-56d067599e53b033731b0a9cf56cd4b5.jpg");
+	background-size: cover;
 }
 
 button > img {
