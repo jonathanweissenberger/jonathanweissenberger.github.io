@@ -273,7 +273,7 @@ function fightMonster(_index : number)
         (playerHP -= (Math.floor(Math.random()  * 10 + 10)));
         if (playerHP == 0)
         {
-            window.alert("Du hast keine Lebenspunkte mehr\nGame Over!")
+            window.alert("Game Over!\nDu hast keine Lebenspunkte mehr!")
             window.alert("Versuch es noch ein mal!")
             
             
@@ -281,7 +281,7 @@ function fightMonster(_index : number)
         }
         if (playerHP < 0)
         {
-            window.alert("Du hast keine Lebenspunkte mehr\nGame Over!")
+            window.alert("Game Over!\nDu hast keine Lebenspunkte mehr!")
             window.alert("Versuch es noch ein mal!")
             loser();
         }
@@ -305,7 +305,8 @@ if (playerLevel < 0)
      playerLevel = 0
 if (playerXP < 0)
     {
-    window.alert("Game Over!")
+    window.alert("Game Over!\nDu hast das Level 0 erreicht!")
+    window.alert("Versuch es noch ein mal!")
     loser();
 }
 if (playerLevel == 20 || playerLevel > 20){
