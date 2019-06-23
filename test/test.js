@@ -52,6 +52,6 @@ function switchNumber(var1, var2) {
 }
 console.log(var1);
 console.log(var2);
-Math.floor(Math.random() * 10);
-console.log(Math.floor(Math.random() * 10));
+Math.floor(Math.random() * 11);
+console.log(Math.floor(Math.random() * 11));
 //# sourceMappingURL=test.js.map

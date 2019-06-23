@@ -72,5 +72,5 @@ function switchNumber (var1 : number, var2 : number){
 console.log(var1)
 console.log(var2)
 
-Math.floor(Math.random() * 10)
-console.log(Math.floor(Math.random() * 10))
+Math.floor(Math.random() * 11)
+console.log(Math.floor(Math.random() * 11))

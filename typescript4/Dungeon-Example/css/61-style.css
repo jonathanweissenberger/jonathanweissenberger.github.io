@@ -28,8 +28,9 @@ h1 {
 }
 
 .monster img {
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 140px;
+	max-height: 140px;
+	margin-left: 40%;
 	
 	
 }
@@ -37,7 +38,7 @@ h1 {
 .monster button {
 	text-align: center;
 	display: block;
-	margin: auto;
+	margin-left: 20%;
 	
 }
 
@@ -70,7 +71,7 @@ button {
   padding: 1em;
   overflow: hidden;
 
-	display: inline-block;
+
   width:10em; 	
 
   border-width: 0;
