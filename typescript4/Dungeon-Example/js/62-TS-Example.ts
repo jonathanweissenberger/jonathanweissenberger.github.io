@@ -35,9 +35,10 @@ interface Monster {
 let monsterHolder : string = "monsterHoldingCell";                                  // ID für das Haupt-Element, in welchem die Monster sich befinden werden. Wird vielleicht mehrfach in dem Skript gebraucht, deshalb einmalig definitiert.
 
 let playerName : string = "Spielername";                                            // Ein paar globale Variablen, welche den Spieler darstellen.
-let playerXP : number = 0 ;                             //Fehler gefunden No1 Variablen                           // Stellt die gesammelte Erfahrung des Spielers dar.
+let playerXP : number = 2000 ;                             //Fehler gefunden No1 Variablen                           // Stellt die gesammelte Erfahrung des Spielers dar.
 let playerXPperLevel : number = 500;
-let playerLevel : number = 1;
+let playerLevel : number = 5;
+let playerHP : number = 100;
                                                 // Da es nur einen Spieler gibt, ergibt sich noch nicht viel Sinn darin, für den Spieler ein interface (im Sinne der Programmierung) zu erstellen.
 
 // Mehrere Arrays, welche jeweils Bauteile für Namen oder Eigenschaften der Monster beinhalten.
@@ -269,7 +270,22 @@ function fightMonster(_index : number)
     }
     else if (playerLevel>0){
         (playerXP -= monsterArray[_index - 1].monsterExperience);
-        window.alert("Das Monster war zu stark für dich!");
+        (playerHP -= (Math.floor(Math.random()  * 10 + 10)));
+        if (playerHP == 0)
+        {
+            window.alert("Du hast keine Lebenspunkte mehr\nGame Over!")
+            window.alert("Versuch es noch ein mal!")
+            
+            
+            loser();
+        }
+        if (playerHP < 0)
+        {
+            window.alert("Du hast keine Lebenspunkte mehr\nGame Over!")
+            window.alert("Versuch es noch ein mal!")
+            loser();
+        }
+        
         console.log("Das Monster weigert sich zu verschwinden."); 
         
     }
@@ -293,7 +309,7 @@ if (playerXP < 0)
     loser();
 }
 if (playerLevel == 20 || playerLevel > 20){
-    window.alert("DU HAST GEWONNEN!!!")
+    window.alert("DU HAST GEWONNEN!!!\n!!!!Glückwunsch!!!!")
     
     winner();
 }
@@ -306,6 +322,8 @@ if (playerLevel == 20 || playerLevel > 20){
 
     document.getElementById("xpCounter").innerHTML = "Player-Level: " + playerLevel + " (XP: " + playerXP + " / " + extendedXP + ")";       // Baue den String für die Spieler-Info zusammen
     console.log("Spieler " + playerName + " hat nun Level " + playerLevel + " mit " + playerXP + " (" + playerXPperLevel + " pro Level)");        // Spieler-Level in der Konsole.
+    document.getElementById("HP").innerHTML = "HP: "+ playerHP;
+    document.getElementById("HP").style.width = playerHP +  "%";
     return playerLevel;
 }}
 
@@ -344,7 +362,7 @@ function clearMonsterCell()
 
 function generateMonsterLevel() : number{
 
-    let monsterLevel : number = Math.floor(Math.random() * 11)
+    let monsterLevel : number = Math.floor(Math.random() * 21)
     return monsterLevel;
 }
 
