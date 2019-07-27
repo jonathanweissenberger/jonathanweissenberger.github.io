@@ -57,20 +57,51 @@ let satz = position2 + position1 + position3;
 console.log(satz);
 
 //Vorlesung 13
-
-let var1 : number = 5 // die variablen vertauschen --> var1 soll 10 und var2 soll 5
+console.log ("die variablen vertauschen --> var1 soll 10 und var2 soll 5: ")
+let var1 : number = 5 
 let var2 : number = 10
-
+let var3 : number = 11
 console.log(var1)
 console.log(var2)
-function switchNumber (var1 : number, var2 : number){
-    let tempValue : number = var1;
-    var1 = var2;
-    var2 = tempValue;
 
+/*function switchNumber (hund1 : number, hund2 : number){
+    let tempValue : number = hund1;
+    hund1 = hund2;
+    hund2 = tempValue;
+
+    console.log(hund1);
+    console.log(hund2); 
 }
-console.log(var1)
-console.log(var2)
+
+switchNumber(var1 ,var2); // wenn hier var2 mit var3 ausgetauscht wird, werden die zahlen von var1 und var3 ausgetauscht
+*/
 
 Math.floor(Math.random() * 11)
 console.log(Math.floor(Math.random() * 11))
+
+
+console.log("Buchstaben in einem Wort heraussuchen")
+let firstLetterOfFirstName : string = "";
+let firstLetterOfLastName : string = "";
+let firstName : string = "Jonathan";
+let lastName :string = "Weissenberger";
+
+firstLetterOfFirstName = firstName[0];
+console.log(firstLetterOfFirstName)
+
+firstLetterOfLastName = lastName[5];
+console.log(firstLetterOfLastName)
+
+
+let hallo : string = "Begrüßung";
+let tschüs : string = "Verabschiedung";
+
+function switchNumber(wort1 : string, wort2 : string){
+      let tempValue : string = wort1;
+      wort1 = wort2;
+      wort2 = tempValue;
+      console.log(wort2)
+}
+switchNumber(hallo ,tschüs);
+
+

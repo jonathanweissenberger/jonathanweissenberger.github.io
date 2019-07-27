@@ -41,17 +41,41 @@ let position3 = "du schrumpfnudel!";
 let satz = position2 + position1 + position3;
 console.log(satz);
 //Vorlesung 13
-let var1 = 5; // die variablen vertauschen --> var1 soll 10 und var2 soll 5
+console.log("die variablen vertauschen --> var1 soll 10 und var2 soll 5: ");
+let var1 = 5;
 let var2 = 10;
+let var3 = 11;
 console.log(var1);
 console.log(var2);
-function switchNumber(var1, var2) {
-    let tempValue = var1;
-    var1 = var2;
-    var2 = tempValue;
+/*function switchNumber (hund1 : number, hund2 : number){
+    let tempValue : number = hund1;
+    hund1 = hund2;
+    hund2 = tempValue;
+
+    console.log(hund1);
+    console.log(hund2);
 }
-console.log(var1);
-console.log(var2);
+
+switchNumber(var1 ,var2); // wenn hier var2 mit var3 ausgetauscht wird, werden die zahlen von var1 und var3 ausgetauscht
+*/
 Math.floor(Math.random() * 11);
 console.log(Math.floor(Math.random() * 11));
+console.log("Buchstaben in einem Wort heraussuchen");
+let firstLetterOfFirstName = "";
+let firstLetterOfLastName = "";
+let firstName = "Jonathan";
+let lastName = "Weissenberger";
+firstLetterOfFirstName = firstName[0];
+console.log(firstLetterOfFirstName);
+firstLetterOfLastName = lastName[5];
+console.log(firstLetterOfLastName);
+let hallo = "Begrüßung";
+let tschüs = "Verabschiedung";
+function switchNumber(wort1, wort2) {
+    let tempValue = wort1;
+    wort1 = wort2;
+    wort2 = tempValue;
+    console.log(wort2);
+}
+switchNumber(hallo, tschüs);
 //# sourceMappingURL=test.js.map

@@ -127,3 +127,15 @@ main p {
 	
 }
 
+#minutes
+{
+	
+	margin-left: 48%;
+	
+	
+}
+#minutes, #seconds
+{
+	color: #ebdc0e;
+	margin-bottom: 10px;
+}

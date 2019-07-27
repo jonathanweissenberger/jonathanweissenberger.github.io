@@ -310,6 +310,7 @@ if (playerXP < 0)
     loser();
 }
 if (playerLevel == 20 || playerLevel > 20){
+    
     window.alert("DU HAST GEWONNEN!!!\n!!!!Glückwunsch!!!!")
     
     winner();
@@ -399,4 +400,5 @@ function fightWeakestMonster() {
         location.reload();
     }
 
+    
     
