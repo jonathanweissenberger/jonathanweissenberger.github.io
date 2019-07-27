@@ -1,17 +1,17 @@
-// Die Arrays für den Spieler, den Computergegner, den Stapel zum Ziehen und den Stapel zum Ablegen
+// Die Arrays für den Spieler, den Computergegner, den Stapel zum Ziehen und den Stapel zum Ablegen.
 let spielerArray = [];
 let computerArray = [];
 let ziehenArray = [];
 let ablegenArray = [];
-// Alle Funktionen die beim öffnen der Website ausgeführt werden
+// Alle Funktionen, die beim Öffnen der Website ausgeführt werden.
 window.onload = function () {
     neuesDeckGenerieren();
     kartenVerteilen();
     generateHTML();
     document.getElementById("Ziehen").addEventListener("click", karteZiehen, false);
 };
-// Das Deck mit den Karten wird generiert und die vorgefertigten Karten bekommen eine Farbe und einen Wert zugewiesen
-// Alle roten Karten werden generiert
+// Das Deck mit den Karten wird generiert und die vorgefertigten Karten bekommen eine Farbe und einen Wert zugewiesen.
+// Alle roten Karten werden generiert.
 function neuesDeckGenerieren() {
     let rot1 = {
         kartenWertigkeit: 1,
@@ -61,7 +61,7 @@ function neuesDeckGenerieren() {
         img: "bilder/rot8.png",
     };
     ziehenArray.push(rot8);
-    // Alle grünen Karten werden generiert
+    // Alle grünen Karten werden generiert.
     let grün1 = {
         kartenWertigkeit: 1,
         kartenFarbe: "grün",
@@ -110,7 +110,7 @@ function neuesDeckGenerieren() {
         img: "bilder/grün8.png",
     };
     ziehenArray.push(grün8);
-    // Alle lila Karten werden generiert
+    // Alle lila Karten werden generiert.
     let lila1 = {
         kartenWertigkeit: 1,
         kartenFarbe: "lila",
@@ -159,7 +159,7 @@ function neuesDeckGenerieren() {
         img: "bilder/lila8.png",
     };
     ziehenArray.push(lila8);
-    // Alle blauen Karten werden generiert
+    // Alle blauen Karten werden generiert.
     let blau1 = {
         kartenWertigkeit: 1,
         kartenFarbe: "blau",
@@ -208,22 +208,11 @@ function neuesDeckGenerieren() {
         img: "bilder/blau8.png",
     };
     ziehenArray.push(blau8);
-    // Das Deck vor jedem Spiel ein mal gemischt
+    // Das Deck wird vor jedem Spiel ein mal gemischt.
     ziehenArray.sort(function (a, b) { return 0.5 - Math.random(); });
 }
-// Die Karten werden an den Spieler und an den Computergegner verteilt, jeder bekommt 5 Karten. Die verteilten Karten werden aus dem "ziehenArray" gelöscht.
-function kartenVerteilen() {
-    for (let i = 0; i < 5; i++) {
-        spielerArray.push(ziehenArray[0]);
-        ziehenArray.splice(0, 1);
-        computerArray.push(ziehenArray[0]);
-        ziehenArray.splice(0, 1);
-    }
-    ablegenArray.push(ziehenArray[0]);
-    ziehenArray.splice(0, 1);
-}
-// Die Bilder der Karten werden im HTML an der jeweiligen Position generiert
-// Die Spielerkarten werden im HTML generiert
+// Die Bilder der Karten werden im HTML generiert.
+// Die Spielerkarten werden im HTML generiert.
 function generateHTML() {
     document.getElementById("Eigene").innerHTML = "";
     for (let i = 0; i <= spielerArray.length - 1; i++) {
@@ -233,18 +222,18 @@ function generateHTML() {
         spielerKarte.addEventListener("click", function () { karteSpielen(i); }, false);
         document.getElementById("Eigene").appendChild(spielerKarte);
     }
-    // Die Karte für den Ablagestapel wird im HTML generiert
+    // Die Karte für den Ablagestapel wird im HTML generiert.
     document.getElementById("Ablegen").innerHTML = "";
     let ablegenKarte = document.createElement("img");
     ablegenKarte.innerHTML = "";
     ablegenKarte.setAttribute("src", ablegenArray[ablegenArray.length - 1].img);
     document.getElementById("Ablegen").appendChild(ablegenKarte);
-    // Die Karten für den "Ziehen" Stapel werden im HTML generiert
+    // Die Karten für den "Ziehen" Stapel werden im HTML generiert.
     document.getElementById("Ziehen").innerHTML = "";
     let ziehenKarte = document.createElement("img");
     ziehenKarte.setAttribute("src", "unokarte.png");
     document.getElementById("Ziehen").appendChild(ziehenKarte);
-    // Die Karten für den Computergegner werden im HTML generiert
+    // Die Karten für den Computergegner werden im HTML generiert.
     document.getElementById("Gegner").innerHTML = "";
     for (let i = 0; i <= computerArray.length - 1; i++) {
         let computerKarte = document.createElement("img");
@@ -253,16 +242,28 @@ function generateHTML() {
         document.getElementById("Gegner").appendChild(computerKarte);
     }
 }
-// Die Funktion für das Karten ziehen. Falls keine Karten mehr auf dem Stapel vorhanden sind, ist das Spiel unentschieden
+// Die Karten werden an den Spieler und an den Computergegner verteilt, jeder bekommt 5 Karten. Die verteilten Karten werden aus dem "Ziehen" Array gelöscht.
+function kartenVerteilen() {
+    for (let i = 0; i < 5; i++) {
+        spielerArray.push(ziehenArray[0]);
+        ziehenArray.splice(0, 1);
+        computerArray.push(ziehenArray[0]);
+        ziehenArray.splice(0, 1);
+    }
+    // Die Karte für den Ablage Stapel wird dort hin verschoben und aus dem "Ziehen" Array gelöscht.
+    ablegenArray.push(ziehenArray[0]);
+    ziehenArray.splice(0, 1);
+}
+// Die Funktion für das Karten ziehen. Es wird auch überprüft, ob noch Karten im Deck vorhanden sind.
 function karteZiehen() {
     if (ziehenArray.length < 1) {
-        alert("!!!Unentschieden!!!\n\n Das Deck ist leer\n\n!!!Versuch es noch ein mal!!!");
+        alert("Das Deck ist leer\n\n(ง ͠° ͟ل͜ ͡°)ง\n\nVersuch es noch ein mal!"); //Falls das Deck beim eigenen Zug leer sein sollte, ist das Spiel unentschieden.
         location.reload();
     }
-    spielerArray.push(ziehenArray[0]);
+    spielerArray.push(ziehenArray[0]); //Die gezogenen Karte wird aus dem Deck gelöscht und ins "spieler" Array verschoben.
     ziehenArray.splice(0, 1);
     generateHTML();
-    gegnerZug();
+    setTimeout(gegnerZug, 300);
 }
 // Der Computer prüft seine Karten im Array der Reihe nach. Stimmt die Wertigkeit oder die Farbe mit der Karte auf dem Ablagestapel überein, wird die erste mögliche Karte gelegt. Falls dies die letzte Karte sein sollte, hat der Computer gewonnen und der Spieler verloren.
 // Es wird ebenfalls überprüft, ob sich noch Karten auf dem "Ziehen" Stapel befinden. Falls nicht, ist das Spiel unentschieden.
@@ -270,7 +271,7 @@ function gegnerZug() {
     let hund = false;
     for (let i = 0; i < computerArray.length; i++) {
         if (computerArray[i].kartenWertigkeit == ablegenArray[ablegenArray.length - 1].kartenWertigkeit || computerArray[i].kartenFarbe == ablegenArray[ablegenArray.length - 1].kartenFarbe) {
-            ablegenArray.push(computerArray[i]);
+            ablegenArray.push(computerArray[i]); //Wenn die Zahl oder die Farbe übereinstimmt, wird die Karte aus dem "Gegner" Array gelöscht und ins "Ablage" Array verschoben.
             computerArray.splice(i, 1);
             generateHTML();
             hund = true;
@@ -278,11 +279,11 @@ function gegnerZug() {
         }
     }
     if (computerArray.length < 1) {
-        alert("!!!Verloren!!!");
+        alert("NO!\n\n(ಥ﹏ಥ)"); //Falls der Gegner keine Karten mehr hat, hat dieser gewonnen bzw. der Spieler verloren.
         location.reload();
     }
     if (ziehenArray.length < 1) {
-        alert("!!!Unentschieden!!!\n\n Das Deck ist leer\n\n!!!Versuch es noch ein mal!!!");
+        alert("Das Deck ist leer\n\n(ง ͠° ͟ل͜ ͡°)ง\n\nVersuch es noch ein mal!"); //Falls das Deck beim gegnerischen Zug leer sein sollte, ist das Spiel unentschieden und die Seite wird nach dem Alert neu geladen.
         location.reload();
     }
     if (hund == false) {
@@ -294,14 +295,14 @@ function gegnerZug() {
 // Wenn die Wertigkeit oder die Farbe der geklickten Karte mit der Wertigkeit oder der Farbe der Karte auf dem Ablagestapel übereinstimmt, kann diese gespielt werden. Falls es sich um die letzte Karte handelt, hat der Spieler gewonnen.
 function karteSpielen(beiclick) {
     if (spielerArray[beiclick].kartenWertigkeit == ablegenArray[ablegenArray.length - 1].kartenWertigkeit || spielerArray[beiclick].kartenFarbe == ablegenArray[ablegenArray.length - 1].kartenFarbe) {
-        ablegenArray.push(spielerArray[beiclick]);
-        spielerArray.splice(beiclick, 1);
+        ablegenArray.push(spielerArray[beiclick]); //Die Karte wird in das "Ablage" Array gepusht.
+        spielerArray.splice(beiclick, 1); // Die Karte wird aus dem "Spieler" Array gelöscht.
         generateHTML();
         if (spielerArray.length < 1) {
-            alert("!!!Gewonnen!!!");
-            location.reload();
+            alert("Respekt\n\n̿̿ ̿̿ ̿̿ ̿'̿'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿");
+            location.reload(); //Falls der Spieler gewonnen hat, wird nach dem Alert die Website neu geladen.
         }
-        gegnerZug();
+        setTimeout(gegnerZug, 300); //Zeitverzögerung für den nächsten Gegnerzug.
     }
 }
 //# sourceMappingURL=uno.js.map
