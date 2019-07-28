@@ -310,7 +310,7 @@ function kartenVerteilen() {
 // Die Funktion für das Karten ziehen. Es wird auch überprüft, ob noch Karten im Deck vorhanden sind.
 function karteZiehen() {
     if (ziehenArray.length <1){
-        alert("Das Deck ist leer\n\n(ง ͠° ͟ل͜ ͡°)ง\n\nVersuch es noch ein mal!")    //Falls das Deck beim eigenen Zug leer sein sollte, ist das Spiel unentschieden.
+        alert("Das Deck ist leer\n\nಠ_ಠ\n\nVersuch es noch ein mal!")    //Falls das Deck beim eigenen Zug leer sein sollte, ist das Spiel unentschieden.
         location.reload();
     }
     spielerArray.push(ziehenArray[0]);  //Die gezogenen Karte wird aus dem Deck gelöscht und ins "spieler" Array verschoben.
