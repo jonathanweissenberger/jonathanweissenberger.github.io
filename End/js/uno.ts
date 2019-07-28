@@ -340,7 +340,7 @@ function gegnerZug() {
             location.reload();
         }
         if (ziehenArray.length <1){
-            alert("Das Deck ist leer\n\n(ง ͠° ͟ل͜ ͡°)ง\n\nVersuch es noch ein mal!")    //Falls das Deck beim gegnerischen Zug leer sein sollte, ist das Spiel unentschieden und die Seite wird nach dem Alert neu geladen.
+            alert("Das Deck ist leer\n\nಠ_ಠ\n\nVersuch es noch ein mal!")    //Falls das Deck beim gegnerischen Zug leer sein sollte, ist das Spiel unentschieden und die Seite wird nach dem Alert neu geladen.
             location.reload();
             
     }
