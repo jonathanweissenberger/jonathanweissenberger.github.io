@@ -1,0 +1,18 @@
+/* #garden-canvas {
+    width: 400px;
+    height: 1000px;
+} */
+
+#money-container {
+    position: absolute;
+    right: 2vw;
+}
+
+#market-prices {
+    display: flex;
+    flex-direction: row;
+}
+
+#market-prices > div {
+    margin: 0 20px;
+}

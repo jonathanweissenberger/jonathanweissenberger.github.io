@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garten Simulator</title>
+    <link rel="stylesheet" href="../style/gardenSimulator.css">
+    <script src="../classes/Bug/Bug.js"></script>
+    <script src="../classes/Plants/Plant.js"></script>
+    <script src="../classes/Plants/Carrot/Carrot.js"></script>
+    <script src="../classes/Plants/Onion/Onion.js"></script>
+    <script src="../classes/Plants/Radish/Radish.js"></script>
+    <script src="../classes/Plants/Salad/Salad.js"></script>
+    <script src="../classes/Plants/Corn/Corn.js"></script>
+    <script src="../classes/Field.js"></script>
+    <script src="../classes/Player/Player.js"></script>
+    <script src="../classes/Market/Market.js"></script>
+    <script src="../classes/Simulator/Simulator.js"></script>
+    <script src="../scripts/gardenSimulator.js"></script>
+</head>
+<body>
+    <div id="money-container">
+        Dein Geld:
+        <p id="money-display"></p>
+    </div>
+    <div>
+        <h2>Dein Garten</h2>
+        <canvas id="garden-canvas"></canvas>    
+    </div>
+    <div>
+        <h2>Aktionen</h2>
+        <h3 id="selected-action-display"></h3>
+        <div id="crops-container">
+            <label>Deine Setzlinge</label>
+            <select id="crop-selection" name="cropSelection">
+                <option value="carrot">Karotte</option>
+                <option value="onion">Zwiebel</option>
+                <option value="radish">Radieschen</option>
+                <option value="salad">Salat</option>
+                <option value="corn">Mais</option>
+            </select>
+            <button id="plant-button">Einfplanzen</button>
+        </div>
+        <div>
+            <button id="water-button">Gießen</button>
+        </div>
+        <div>
+            <button id="dung-button">Düngen</button>
+        </div>
+        <div>
+            <button id="harvest-button">Ernten</button>
+        </div>
+        <div>
+            <button id="pesticide-button">Schädling bekämpfen</button>
+        </div>
+    </div>
+    <div id="market-prices">
+        <div id="seed-prices">
+
+        </div>
+        <div id="plant-prices">
+
+        </div>
+        <div id="care-prices">
+
+        </div>
+    </div>
+    
+    
+</body>
+</html>
